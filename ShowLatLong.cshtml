@@ -1,0 +1,38 @@
+﻿
+/******************** Getting Value from Form and passing for Database **************************/
+//Written by Tanzila
+
+
+<!DOCTYPE html>
+<html>
+
+<body>
+    @{
+        if (IsPost)
+        {
+            string latloc = Request["lati"];
+            string lonloc = Request["loni"];
+            NewAddress ad = new NewAddress();
+            NewAddress.Lat = Double.Parse(latloc);
+            NewAddress.Lon = Double.Parse(lonloc);
+
+            Response.Write("Hi! got lat lon? " + NewAddress.Lat + " and " + NewAddress.Lon);
+
+            <div id="floating-panel">
+                <form name="myForm2" action="~/DBLanLong.aspx"
+                      method="post">
+                    <input type="submit" value="Save to Database" class="submit">
+
+                </form>
+            </div>
+        }
+        else
+        {
+            Response.Write("Error in post!");
+        }
+
+
+    }
+
+</body>
+</html>
