@@ -1,6 +1,5 @@
 ﻿
-/********************** Geocoder Code to convert address to Lat Long and pass value to Class variables ****************/
-//Written By Tanzila, Anitha, Ashvija
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,11 +42,17 @@
     <div id="floating-panel">
         <form name="myForm" action="~/ShowLatLong.cshtml"
                method="post">
-            <input id="address" type="textbox" value="Sydney, NSW">
-            <input id="submit1" type="button" onclick="" value="Geocode">
-            <input id="latshow" name="lati" type="text" value="-34.397">
-            <input id="lonshow" name="loni" type="text" value="150.644">
-            <input type="submit" value="Leave Map" class="submit">
+            Please enter your current address here:<br>
+            Street Address: <input id="address1" name="street" type="textbox" value="">
+            Apt/Suit/Unit: <input id="address2" name="address2" type="textbox" value=""><br>
+            City: <input id="city" name="city" type="textbox" value="">
+            State: <input id="state" name="state" type="textbox" value="">
+            Zip: <input id="zip" name ="zip" type="textbox" value=""><br>
+            <input id="submit1" type="button" onclick="" value="Geocode"><br>
+            The geocode of your address is shown here:<br>
+            Latitude:<input id="latshow" name="lati" type="text" value="">
+            Longitude:<input id="lonshow" name="loni" type="text" value=""><br>
+            <input type="submit" value="Save Address" class="submit">
 
         </form>
     </div>
@@ -66,7 +71,7 @@
       }
 
       function geocodeAddress(geocoder, resultsMap) {
-          var address = document.getElementById('address').value;
+          var address = document.getElementById('address1').value + document.getElementById('city').value + document.getElementById('state').value + document.getElementById('zip').value;
           var lat = -34.397;
           var lon = 150.644;
         geocoder.geocode({'address': address}, function(results, status) {

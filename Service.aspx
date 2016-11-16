@@ -12,9 +12,11 @@
         <h3>&nbsp;</h3>
         <h3>&nbsp;</h3>
         <h3>
-         <asp:HyperLink ID="findNearby" runat="server" href="SetPreference">Step 2: Find your Nearby Parents/Baby Sitters</asp:HyperLink>
+         <asp:HyperLink ID="findNearby" runat="server" href="SetPreference.aspx">Step 2: Find your Nearby Parents/Baby Sitters</asp:HyperLink>
     </h3>
-
+ <h3>
+         <asp:HyperLink ID="ShowAddress" runat="server" href="ShowResultAddress.aspx">Step 3: Show Address of Results Found</asp:HyperLink>
+    </h3>
    
 
 
