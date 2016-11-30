@@ -2,18 +2,20 @@
 
 <asp:Content ID="BodyContent" ContentPlaceHolderID="MainContent" runat="server">
     <h2><%: Title %>.</h2>
+    <p>&nbsp;</p>
+    <asp:Button ID="Button1" runat="server" BackColor="#99FF99" BorderStyle="Groove" Height="72px" OnClick="Button1_Click" Text="Geocode Address" Font-Size="Large" Width="460px" />
+
+<p>&nbsp;</p>
+<p>
+    <asp:Button ID="Button2" runat="server" BackColor="#CC66FF" BorderStyle="Groove" Font-Bold="True" Font-Size="Medium" Height="83px" OnClick="Button2_Click" Text="Find Nearby Parent/BabySitter" Width="461px" />
+</p>
+<p>&nbsp;</p>
+<p>
+    <asp:Button ID="Button3" runat="server" BackColor="#66CCFF" BorderStyle="Groove" Font-Bold="True" Font-Size="Large" Height="79px" OnClick="Button3_Click" Text="Request Service" Width="462px" />
+</p>
+<p>&nbsp;</p>
 
     
- <h3>Get the service of finding baby sitters nearby</h3>
-    <h3>&nbsp;</h3>
-    <h3>
-        <asp:HyperLink ID="geocodeAddress1" runat="server" href="GeocodeAddress.cshtml">Step 1: Save Your Geocode Address (Convert your current Address to Latitude and Longitude)</asp:HyperLink>
-        <p> Save your current address to the system database to find nearby Baby sitters/Parents </p>
-        <h3>&nbsp;</h3>
-        <h3>&nbsp;</h3>
-        <h3>
-         <asp:HyperLink ID="findNearby" runat="server" href="SetPreference">Step 2: Find your Nearby Parents/Baby Sitters</asp:HyperLink>
-    </h3>
 
    
 

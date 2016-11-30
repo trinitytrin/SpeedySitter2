@@ -16,47 +16,37 @@ public partial class Service : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        if (!IsPostBack)
-        {
-            CheckMysqlConnection();
-        }
+
     }
 
-    private void CheckMysqlConnection()
+    protected void Button1_Click(object sender, EventArgs e)
     {
-        try
-        {
-            string connectionString = @"Data Source=localhost; Database=speedy_sitter; User ID=Trina; Password=123";
-            using (MySqlConnection cn = new MySqlConnection(connectionString))
-            {
-                cn.Open();
-                //Response.Write("MySQL connection successful!");
-                using (MySqlCommand cmd = new MySqlCommand("SELECT * FROM address"))
-                {
-                    using (MySqlDataAdapter sda = new MySqlDataAdapter())
-                    {
-                        cmd.Connection = cn;
-                        sda.SelectCommand = cmd;
-
-                        DataTable dt = new DataTable();
-                        
-                            sda.Fill(dt);
-                        //GridView.DataSource = dt;
-                        //GridView.DataBind(dt);
-
-
-                           // GridView.DisabledCssClass
-                        
-                    }
-                }
-            }
-        }
-        catch (Exception ex)
-        {
-            Response.Write("Exception caught in Service page connection to database: "+ ex);
-      
-        }
+        Response.Redirect("GeocodeAddress.cshtml");
     }
 
- 
+    protected void Button2_Click(object sender, EventArgs e)
+    {
+        Response.Redirect("ShowResultAddress.aspx");
+    }
+
+    protected void Button3_Click(object sender, EventArgs e)
+    {
+        string session_user = Session["USER_NAME"].ToString();
+
+        Person CurrenntUser = new Person();
+        string s = "BabySitter";
+        
+        CurrenntUser = PersonInfoGetter.GetPersonInfoByUsername(session_user);
+
+        if(CurrenntUser.Type!=s)
+        {
+            Response.Redirect("CreateNewRequest.cshtml");
+        }
+        else
+        {
+            Response.Redirect("FindRequest.cshtml");
+        }
+      
+
+    }
 }

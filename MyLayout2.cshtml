@@ -1,5 +1,4 @@
-﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site.master.cs" Inherits="SiteMaster" %>
-
+﻿<!DOCTYPE html>
 <!DOCTYPE html>
 
 <html lang="en">
@@ -51,20 +50,20 @@
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/NewHome">Home</a></li>
-                        <li><a runat="server" href="~/ViewProfile">View Profile</a></li>
-                       
-                        <li><a runat="server" href="~/NewChildrenProfile">Children Profile</a></li>
-                        <li><a runat="server" href="~/Service">Service</a></li>
-                        
 
-                        
+                        <li><a runat="server" href="~/NewChildrenProfile">Children Profile</a></li>
+                        <li><a runat="server" href="~/NewService">Service</a></li>
+
+                        <li><a runat="server" href="~/About">About</a></li>
+                        <li><a runat="server" href="~/Contact">Contact</a></li>
+
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                
-                        <li><a runat="server" href="~/Logoutaspx.aspx">Log out</a></li>
-                                
+                                <li><a runat="server" href="~/UserInfoRegistration">Register</a></li>
+                                <li><a runat="server" href="~/Login">Log in</a></li>
+
                             </ul>
                         </AnonymousTemplate>
                         <LoggedInTemplate>
@@ -88,5 +87,7 @@
             </footer>
         </div>
     </form>
+
+    @RenderBody()
 </body>
 </html>
